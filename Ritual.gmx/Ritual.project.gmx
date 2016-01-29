@@ -5,19 +5,26 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_organotile</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
+    <font>fonts\font2</font>
+    <font>fonts\font3</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_drawtitles</object>
+    <object>objects\obj_organotile</object>
+    <object>objects\cntrl_organogram</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\menu_main</room>
     <room>rooms\rom_game</room>
+    <room>rooms\rom_organogram</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
