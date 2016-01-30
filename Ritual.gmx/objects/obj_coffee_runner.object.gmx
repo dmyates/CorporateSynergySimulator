@@ -62,11 +62,11 @@ right = keyboard_check(vk_right);
 
 hmove = left + right
 
-if hmove &lt; 0
+if hmove &lt; 0 and x &gt;= 128 
     {
     x -= movespeed;
     }
-if hmove &gt; 0
+if hmove &gt; 0 and x &lt;= 1664
     {
     x += movespeed;
     }
