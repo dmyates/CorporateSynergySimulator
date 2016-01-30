@@ -10,10 +10,10 @@
     <sprite>sprites\spr_coffee_barrier</sprite>
     <sprite>sprites\spr_coffee_office_hazard</sprite>
     <sprite>sprites\spr_coffee_coffee</sprite>
+    <sprite>sprites\spr_phonebutton</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
@@ -25,8 +25,11 @@
     <object>objects\obj_coffee_office_hazard</object>
     <object>objects\obj_coffee_hazard_spawn</object>
     <object>objects\obj_coffee_coffee</object>
+    <object>objects\obj_techsupp</object>
+    <object>objects\obj_phonebutton</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_techsupport</room>
     <room>rooms\menu_main</room>
     <room>rooms\rom_coffeerun</room>
     <room>rooms\rom_game</room>
