@@ -27,37 +27,53 @@
             <kind>1</kind>
             <string>///Set up some vars
 
-globalvar organo_selected, organo_word;
+globalvar organo_selected, organo_words;
 
-organo_word[0] = "Junior"
-organo_word[1] = "Associate"
-organo_word[2] = "Senior"
-organo_word[3] = "Lead"
-organo_word[4] = "Managing"
-organo_word[5] = "Executive"
-organo_word[6] = "Vice"
-organo_word[7] = "Acting"
-organo_word[8] = "Marketing"
-organo_word[9] = "Information"
-organo_word[10] = "Finance"
-organo_word[11] = "Human Resources"
-organo_word[12] = "Strategy"
-organo_word[13] = "Account"
-organo_word[14] = "Analyst"
-organo_word[15] = "Manager"
-organo_word[16] = "Administrator"
-organo_word[17] = "Consultant"
-organo_word[18] = "Engineer"
-organo_word[19] = "Director"
-organo_word[20] = "Representative"
+organo_words = ds_list_create()
+
+ds_list_add(organo_words, "Junior"
+                        , "Associate"
+                        , "Senior"
+                        , "Lead"
+                        , "Managing"
+                        , "Executive"
+                        , "Vice"
+                        , "Acting"
+                        , "Marketing"
+                        , "Information"
+                        , "Finance"
+                        , "Human Resources"
+                        , "Strategy"
+                        , "Account"
+                        , "Analyst")
+                        
+ds_list_add(organo_words, "Manager"
+                        , "Administrator"
+                        , "Consultant"
+                        , "Engineer"
+                        , "Director"
+                        , "Representative")
 
 
 organo_selected = noone
 
+ow_selection = ds_list_create()
+
+ds_list_copy(ow_selection, organo_words)
+
 for (i = 0; i &lt; 3; i++)
-    rule[i] = organo_word[irandom(array_length_1d(organo_word))]
+{
+    rule[i] = ow_selection[| irandom(ds_list_size(ow_selection))]
+    ds_list_delete(ow_selection, ds_list_find_index(ow_selection, rule[i])) //ensure no dups
+}
     
-rules = "The "+organo_word[0]+" is below the "+organo_word[1] + "#The "+organo_word[1]+" is below the "+organo_word[2]
+ds_list_destroy(ow_selection)
+ds_list_destroy(organo_words)
+    
+// Local
+rules = ""+rule[0]+" is below "+rule[1] + "#"+rule[1]+" is below "+rule[2]
+
+order_str = ""
 </string>
           </argument>
         </arguments>
@@ -81,6 +97,7 @@ rules = "The "+organo_word[0]+" is below the "+organo_word[1] + "#The "+organo_w
             <string>///Set rules alarm
 
 alarm[0] = room_speed*5
+
 </string>
           </argument>
         </arguments>
@@ -104,6 +121,8 @@ alarm[0] = room_speed*5
           <argument>
             <kind>1</kind>
             <string>/// Figure out the player's score
+
+order = organogram_score()
 </string>
           </argument>
         </arguments>
@@ -183,13 +202,15 @@ with (organo_selected)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Display rules if the rules alarm is running
+            <string>///Display rules at the beginning and results at the end
 
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
 if (alarm[0] &gt; -1)
     draw_text_ext(room_width/2, room_height/3, rules, -1, room_width * 0.6)
+else if (alarm[1] == -1)
+     draw_text_ext(room_width/2, room_height/3, order, -1, room_width * 0.6)
 </string>
           </argument>
         </arguments>

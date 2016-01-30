@@ -105,7 +105,7 @@ global.organo_selected = id
             <kind>1</kind>
             <string>///Draw my sprite and label
 
-if cntrl_organogram.alarm[0] &gt; -1
+if cntrl_organogram.alarm[1] == -1
     exit
     
 draw_self()
