@@ -35,6 +35,9 @@
       <sprite>sprites\spr_pc_close</sprite>
       <sprite>sprites\spr_somethinghappened</sprite>
       <sprite>sprites\spr_pccrash_desktop</sprite>
+      <sprite>sprites\spr_pccrash_startmenu</sprite>
+      <sprite>sprites\spr_pccrash_startbutton</sprite>
+      <sprite>sprites\spr_pccrash_reboot</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -52,6 +55,15 @@
     <font>fonts\fnt_pccrash</font>
   </fonts>
   <objects name="objects">
+    <objects name="PC Crash">
+      <object>objects\obj_pccrash_somethinghappened</object>
+      <object>objects\obj_pccrash_error</object>
+      <object>objects\obj_pccrash_close</object>
+      <object>objects\obj_pccrash_desktop</object>
+      <object>objects\obj_pccrash_startmenu</object>
+      <object>objects\obj_pccrash_startbutton</object>
+      <object>objects\obj_pccrash_reboot</object>
+    </objects>
     <objects name="TechSupport">
       <object>objects\obj_phonebutton</object>
       <object>objects\obj_techsupp</object>
@@ -72,12 +84,6 @@
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
     <object>objects\obj_organotile</object>
-    <objects name="PC Crash">
-      <object>objects\obj_pccrash_somethinghappened</object>
-      <object>objects\obj_pccrash_error</object>
-      <object>objects\obj_pccrash_close</object>
-      <object>objects\obj_pccrash_desktop</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_pccrash</room>
