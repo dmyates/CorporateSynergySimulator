@@ -37,9 +37,6 @@
     <font>fonts\font3</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_menu</object>
-    <object>objects\obj_slide_template</object>
-    <object>objects\obj_slide_title</object>
     <objects name="Coffee">
       <object>objects\obj_coffee_hazard_spawn</object>
       <object>objects\obj_coffee_runner</object>
@@ -48,15 +45,18 @@
       <object>objects\obj_coffee_coffee</object>
       <object>objects\obj_coffee_border</object>
     </objects>
+    <object>objects\obj_menu</object>
+    <object>objects\obj_slide_template</object>
+    <object>objects\obj_slide_title</object>
     <object>objects\obj_organotile</object>
     <object>objects\cntrl_organogram</object>
     <object>objects\obj_techsupp</object>
     <object>objects\obj_phonebutton</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rom_techsupport</room>
     <room>rooms\menu_main</room>
     <room>rooms\rom_coffeerun</room>
+    <room>rooms\rom_techsupport</room>
     <room>rooms\rom_game</room>
     <room>rooms\rom_organogram</room>
   </rooms>
