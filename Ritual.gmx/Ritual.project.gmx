@@ -6,7 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-<<<<<<< HEAD
     <sprites name="Coffee">
       <sprite>sprites\spr_coffee_runner</sprite>
       <sprite>sprites\spr_coffee_synergy</sprite>
@@ -23,17 +22,22 @@
       <sprite>sprites\spr_coffee_border</sprite>
     </sprites>
     <sprite>sprites\spr_phonebutton</sprite>
+    <sprite>sprites\spr_organotile</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\organogram_score.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
     <font>fonts\fnt_slide_title</font>
+    <font>fonts\font2</font>
+    <font>fonts\font3</font>
   </fonts>
   <objects name="objects">
-<<<<<<< HEAD
-    <object>objects\obj_drawtitles</object>
+    <object>objects\obj_menu</object>
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
     <objects name="Coffee">
@@ -44,25 +48,17 @@
       <object>objects\obj_coffee_coffee</object>
       <object>objects\obj_coffee_border</object>
     </objects>
-  </objects>
-  <rooms name="rooms">
-    <room>rooms\rom_cofferun</room>
-=======
-    <object>objects\obj_menu</object>
-    <object>objects\obj_coffee_runner</object>
-    <object>objects\obj_coffee_barrier</object>
-    <object>objects\obj_coffee_office_hazard</object>
-    <object>objects\obj_coffee_hazard_spawn</object>
-    <object>objects\obj_coffee_coffee</object>
+    <object>objects\obj_organotile</object>
+    <object>objects\cntrl_organogram</object>
     <object>objects\obj_techsupp</object>
     <object>objects\obj_phonebutton</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_techsupport</room>
->>>>>>> refs/remotes/origin/techsupport
     <room>rooms\menu_main</room>
     <room>rooms\rom_coffeerun</room>
     <room>rooms\rom_game</room>
+    <room>rooms\rom_organogram</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
