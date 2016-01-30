@@ -21,7 +21,13 @@
     <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_version>0</option_android_build_version>
     <option_android_color_depth>0</option_android_color_depth>
+    <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
     <option_android_display_name>Ritual</option_android_display_name>
+    <option_android_facebook_app_display_name></option_android_facebook_app_display_name>
+    <option_android_facebook_appid></option_android_facebook_appid>
+    <option_android_facebook_enable>false</option_android_facebook_enable>
+    <option_android_flurry_analytics>false</option_android_flurry_analytics>
+    <option_android_google_analytics>false</option_android_google_analytics>
     <option_android_google_analytics_enable>false</option_android_google_analytics_enable>
     <option_android_google_play>0</option_android_google_play>
     <option_android_google_play_id></option_android_google_play_id>
@@ -60,6 +66,7 @@
     <option_android_scale>-1</option_android_scale>
     <option_android_set_device_id></option_android_set_device_id>
     <option_android_splash_png>Configs\Default\android\splash.png</option_android_splash_png>
+    <option_android_splash_time>0</option_android_splash_time>
     <option_android_target_sdk_version>16</option_android_target_sdk_version>
     <option_android_texture_page>1024</option_android_texture_page>
     <option_android_use_test_ads>0</option_android_use_test_ads>
@@ -131,6 +138,9 @@
     <option_ios_certificate>&lt; Press refresh to fetch certificate list from Mac&gt;</option_ios_certificate>
     <option_ios_device_type>3</option_ios_device_type>
     <option_ios_display_name>Ritual</option_ios_display_name>
+    <option_ios_facebook_app_display_name></option_ios_facebook_app_display_name>
+    <option_ios_facebook_appid></option_ios_facebook_appid>
+    <option_ios_facebook_enable>false</option_ios_facebook_enable>
     <option_ios_flurry_enable>false</option_ios_flurry_enable>
     <option_ios_flurry_id></option_ios_flurry_id>
     <option_ios_google_analytics_enable>false</option_ios_google_analytics_enable>
@@ -170,6 +180,7 @@
     <option_ios_scale>-1</option_ios_scale>
     <option_ios_set_device_id></option_ios_set_device_id>
     <option_ios_splash_png>Configs\Default\ios\splash.png</option_ios_splash_png>
+    <option_ios_splash_time>0</option_ios_splash_time>
     <option_ios_texture_page>1024</option_ios_texture_page>
     <option_ios_use_test_ads>0</option_ios_use_test_ads>
     <option_lastchanged></option_lastchanged>
@@ -350,7 +361,38 @@
     <option_win8_store_logo>Configs\Default\Windows8\logos\logo50.png</option_win8_store_logo>
     <option_win8_texture_page>1024</option_win8_texture_page>
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
+    <option_winUAP_build_version>0</option_winUAP_build_version>
+    <option_winUAP_certificate_location>WinUWPRunner_TemporaryKey.pfx</option_winUAP_certificate_location>
+    <option_winUAP_display_name>Ritual</option_winUAP_display_name>
+    <option_winUAP_internet_capable>false</option_winUAP_internet_capable>
+    <option_winUAP_interpolate>true</option_winUAP_interpolate>
+    <option_winUAP_landscape_allowed>true</option_winUAP_landscape_allowed>
+    <option_winUAP_landscape_flipped_allowed>true</option_winUAP_landscape_flipped_allowed>
+    <option_winUAP_large_logo>Configs\Default\WindowsUAP\logos\LargeLogo.scale-100.png</option_winUAP_large_logo>
+    <option_winUAP_logo>Configs\Default\WindowsUAP\logos\Logo.scale-100.png</option_winUAP_logo>
+    <option_winUAP_logo_background_colour>#000000</option_winUAP_logo_background_colour>
+    <option_winUAP_logo_foreground_text>light</option_winUAP_logo_foreground_text>
+    <option_winUAP_major_version>1</option_winUAP_major_version>
+    <option_winUAP_microphone_capable>false</option_winUAP_microphone_capable>
+    <option_winUAP_minor_version>0</option_winUAP_minor_version>
+    <option_winUAP_native_cpu>x86</option_winUAP_native_cpu>
+    <option_winUAP_package_display_name>YourPackageDisplayName</option_winUAP_package_display_name>
+    <option_winUAP_package_name>YourPackageName</option_winUAP_package_name>
+    <option_winUAP_portrait_allowed>true</option_winUAP_portrait_allowed>
+    <option_winUAP_portrait_flipped_allowed>true</option_winUAP_portrait_flipped_allowed>
+    <option_winUAP_publisher_display_name>YourPublisherName</option_winUAP_publisher_display_name>
+    <option_winUAP_revision_version>0</option_winUAP_revision_version>
+    <option_winUAP_scaling_stretch>false</option_winUAP_scaling_stretch>
+    <option_winUAP_search_capable>false</option_winUAP_search_capable>
+    <option_winUAP_small_logo>Configs\Default\WindowsUAP\logos\SmallLogo.scale-100.png</option_winUAP_small_logo>
+    <option_winUAP_smallish_logo>Configs\Default\WindowsUAP\logos\SmallishLogo.scale-100.png</option_winUAP_smallish_logo>
+    <option_winUAP_splash_background_colour>#000000</option_winUAP_splash_background_colour>
+    <option_winUAP_splash_png>Configs\Default\WindowsUAP\SplashScreen.scale-100.png</option_winUAP_splash_png>
+    <option_winUAP_store_logo>Configs\Default\WindowsUAP\logos\StoreLogo.scale-100.png</option_winUAP_store_logo>
+    <option_winUAP_texture_page>1024</option_winUAP_texture_page>
+    <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
+    <option_windows_alternate_sync_method>false</option_windows_alternate_sync_method>
     <option_windows_build_version>0</option_windows_build_version>
     <option_windows_company_info></option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
@@ -366,6 +408,7 @@
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>
+    <option_windows_sleep_margin>1</option_windows_sleep_margin>
     <option_windows_splash_background_colour>#000000</option_windows_splash_background_colour>
     <option_windows_splash_screen>Configs\Default\windows\splash.png</option_windows_splash_screen>
     <option_windows_steam_app_id>0</option_windows_steam_app_id>

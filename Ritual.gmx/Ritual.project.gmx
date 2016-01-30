@@ -24,6 +24,7 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
@@ -45,6 +46,7 @@
   <rooms name="rooms">
     <room>rooms\rom_cofferun</room>
     <room>rooms\menu_main</room>
+    <room>rooms\rom_coffeerun</room>
     <room>rooms\rom_game</room>
   </rooms>
   <help>
