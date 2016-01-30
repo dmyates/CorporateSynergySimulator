@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_dial</sound>
+    <sound>sound\snd_dialtone</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Coffee">
       <sprite>sprites\spr_coffee_runner</sprite>
@@ -21,7 +24,12 @@
       <sprite>sprites\spr_coffee_barchart</sprite>
       <sprite>sprites\spr_coffee_border</sprite>
     </sprites>
-    <sprite>sprites\spr_phonebutton</sprite>
+    <sprites name="TechSupport">
+      <sprite>sprites\spr_phonebutton</sprite>
+      <sprite>sprites\spr_tech_phone</sprite>
+      <sprite>sprites\spr_tech_handset</sprite>
+      <sprite>sprites\spr_sticky</sprite>
+    </sprites>
     <sprite>sprites\spr_organotile</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -35,8 +43,16 @@
     <font>fonts\fnt_slide_title</font>
     <font>fonts\font2</font>
     <font>fonts\font3</font>
+    <font>fonts\fnt_handwrite</font>
   </fonts>
   <objects name="objects">
+    <objects name="TechSupport">
+      <object>objects\obj_phonebutton</object>
+      <object>objects\obj_techsupp</object>
+      <object>objects\obj_tech_phone</object>
+      <object>objects\obj_tech_handset</object>
+      <object>objects\obj_sticky</object>
+    </objects>
     <objects name="Coffee">
       <object>objects\obj_coffee_hazard_spawn</object>
       <object>objects\obj_coffee_runner</object>
@@ -45,21 +61,21 @@
       <object>objects\obj_coffee_coffee</object>
       <object>objects\obj_coffee_border</object>
     </objects>
+    <object>objects\cntrl_organogram</object>
     <object>objects\obj_menu</object>
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
     <object>objects\obj_organotile</object>
-    <object>objects\cntrl_organogram</object>
-    <object>objects\obj_techsupp</object>
-    <object>objects\obj_phonebutton</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\menu_main</room>
-    <room>rooms\rom_coffeerun</room>
-    <room>rooms\rom_cofferun</room>
     <room>rooms\rom_techsupport</room>
+    <room>rooms\rom_cofferun</room>
+    <room>rooms\menu_main</room>
     <room>rooms\rom_game</room>
     <room>rooms\rom_organogram</room>
+    <rooms name="Legacy">
+      <room>rooms\rom_coffeerun</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

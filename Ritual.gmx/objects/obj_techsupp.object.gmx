@@ -33,10 +33,10 @@ ds_list_shuffle(numbers)
 
 var sx, fx, cx, sy, fy, cy;
 
-sx = room_width/3
+sx = room_width/2 - 96
 fx = sx + sprite_width*4.5
 
-sy = room_height/3
+sy = (2*room_height)/3
 fy = sy + sprite_height*4.5
 
 ///Main body
@@ -78,6 +78,30 @@ attempt = ""
 
 state = 0 //0=playing,1=lose,2=win
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>snd_dialtone</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -158,8 +182,11 @@ else
             <kind>1</kind>
             <string>///Draw the tech support number and your attempt
 
+draw_set_color(c_black)
+draw_set_font(fnt_handwrite)
+draw_set_halign(fa_center)
+draw_text(room_width/2 + 4, (room_height/2) - 224, "Tech support: " + ts_number)
 draw_set_font(fnt_body)
-draw_text(room_width/2, room_height/4, "Tech support: " + ts_number)
 draw_text(room_width/2, room_height * 0.7, attempt)
 
 draw_set_font(fnt_title)
