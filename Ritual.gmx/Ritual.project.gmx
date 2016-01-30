@@ -31,6 +31,11 @@
       <sprite>sprites\spr_sticky</sprite>
     </sprites>
     <sprite>sprites\spr_organotile</sprite>
+    <sprites name="PC Crash">
+      <sprite>sprites\spr_pc_close</sprite>
+      <sprite>sprites\spr_somethinghappened</sprite>
+      <sprite>sprites\spr_pccrash_desktop</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -44,6 +49,7 @@
     <font>fonts\font2</font>
     <font>fonts\font3</font>
     <font>fonts\fnt_handwrite</font>
+    <font>fonts\fnt_pccrash</font>
   </fonts>
   <objects name="objects">
     <objects name="TechSupport">
@@ -66,8 +72,15 @@
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
     <object>objects\obj_organotile</object>
+    <objects name="PC Crash">
+      <object>objects\obj_pccrash_somethinghappened</object>
+      <object>objects\obj_pccrash_error</object>
+      <object>objects\obj_pccrash_close</object>
+      <object>objects\obj_pccrash_desktop</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_pccrash</room>
     <room>rooms\rom_techsupport</room>
     <room>rooms\rom_cofferun</room>
     <room>rooms\menu_main</room>
