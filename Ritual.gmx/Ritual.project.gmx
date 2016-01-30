@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+<<<<<<< HEAD
     <sprites name="Coffee">
       <sprite>sprites\spr_coffee_runner</sprite>
       <sprite>sprites\spr_coffee_synergy</sprite>
@@ -21,16 +22,17 @@
       <sprite>sprites\spr_coffee_barchart</sprite>
       <sprite>sprites\spr_coffee_border</sprite>
     </sprites>
+    <sprite>sprites\spr_phonebutton</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
     <font>fonts\fnt_slide_title</font>
   </fonts>
   <objects name="objects">
+<<<<<<< HEAD
     <object>objects\obj_drawtitles</object>
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
@@ -45,6 +47,19 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_cofferun</room>
+=======
+    <object>objects\obj_menu</object>
+    <object>objects\obj_coffee_runner</object>
+    <object>objects\obj_coffee_barrier</object>
+    <object>objects\obj_coffee_office_hazard</object>
+    <object>objects\obj_coffee_hazard_spawn</object>
+    <object>objects\obj_coffee_coffee</object>
+    <object>objects\obj_techsupp</object>
+    <object>objects\obj_phonebutton</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rom_techsupport</room>
+>>>>>>> refs/remotes/origin/techsupport
     <room>rooms\menu_main</room>
     <room>rooms\rom_coffeerun</room>
     <room>rooms\rom_game</room>
