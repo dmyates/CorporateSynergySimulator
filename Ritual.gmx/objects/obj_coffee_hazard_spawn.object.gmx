@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Set Variable
+coffeespawntime = 5;
 alarm[0] = room_speed;
-alarm[1] = room_speed*5;
+alarm[1] = room_speed*coffeespawntime;
 spawnx = 0;
 spawny = 0;
 </string>
@@ -53,8 +54,9 @@ spawny = 0;
           <argument>
             <kind>1</kind>
             <string>///Spawn Coffee
-instance_create(960,0,obj_coffee_office_hazard);
-alarm[1] = room_speed;
+spawncx = irandom_range(128,1664);
+instance_create(spawncx,0,obj_coffee_coffee);
+alarm[1] = room_speed*coffeespawntime;;
 </string>
           </argument>
         </arguments>
@@ -78,7 +80,7 @@ alarm[1] = room_speed;
           <argument>
             <kind>1</kind>
             <string>///Spawn Office Hazards
-spawnx = irandom_range(0,room_width*(14/15));
+spawnx = irandom_range(128,1664);
 spawny = 0;
 instance_create(spawnx,spawny,obj_coffee_office_hazard);
 alarm[0] = room_speed;
