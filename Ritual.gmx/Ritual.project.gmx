@@ -13,12 +13,13 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_drawtitles</object>
+    <object>objects\obj_menu</object>
     <object>objects\obj_coffee_runner</object>
     <object>objects\obj_coffee_barrier</object>
     <object>objects\obj_coffee_office_hazard</object>
@@ -26,8 +27,8 @@
     <object>objects\obj_coffee_coffee</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rom_coffeerun</room>
     <room>rooms\menu_main</room>
+    <room>rooms\rom_coffeerun</room>
     <room>rooms\rom_game</room>
   </rooms>
   <help>
