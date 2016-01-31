@@ -27,16 +27,18 @@
             <kind>1</kind>
             <string>///Set vars
 
-max_energy = 50
+max_energy = 100
 energy = max_energy
 
-max_time = 60
+max_time = 10
 time = max_time
 
 minigames = ds_list_create()
 
 ds_list_add(minigames, rom_values
                      , rom_pccrash)
+                     
+score = 0
 </string>
           </argument>
         </arguments>
@@ -82,12 +84,15 @@ ds_list_destroy(minigames)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Lose game
+            <string>///Win or lose game
 
 with obj_coffeecup
      instance_destroy()
      
-room_goto(rom_fired)
+if (time &lt;= 0)
+   room_goto(rom_appraisal)
+else if (energy &lt;= 0)
+   room_goto(rom_fired)
 </string>
           </argument>
         </arguments>
@@ -137,9 +142,10 @@ room_goto(minigames[| 0])
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Decrease energy constantly
+            <string>///Decrease energy and time constantly
 
 energy -= 0.1
+time -= 1/room_speed
 </string>
           </argument>
         </arguments>
@@ -160,10 +166,11 @@ energy -= 0.1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Get fired if we run out of energy
+            <string>///Handle winning and losing
 
-if (energy &lt;= 0)
+if (energy &lt;= 0) or (time &lt;= 0) //lose
    instance_destroy()
+   
 </string>
           </argument>
         </arguments>
@@ -243,6 +250,37 @@ if (alarm[0] &gt; -1)
    draw_set_colour(c_red)
    draw_text(room_width/2, room_height/2, "Office ritual in:#"+ string(round(alarm[0]/room_speed)))
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw timer and score/bvi
+
+draw_set_font(fnt_body)
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_colour(c_black)
+
+draw_text(room_width/20, 16, "Time until performance appraisal: " + string(round(time)))
+
+bvi_set_colour()
+draw_text(room_width * 15/20, 16, "Business Value Indicator: " + string(round(score)))
 </string>
           </argument>
         </arguments>
