@@ -39,11 +39,14 @@
       <sprite>sprites\spr_pccrash_startbutton</sprite>
       <sprite>sprites\spr_pccrash_reboot</sprite>
     </sprites>
+    <sprite>sprites\spr_coffeecup</sprite>
+    <sprite>sprites\spr_guess</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\organogram_score.gml</script>
+    <script>scripts\values_createguesses.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
@@ -80,10 +83,16 @@
       <object>objects\obj_coffee_border</object>
     </objects>
     <object>objects\cntrl_organogram</object>
+    <objects name="Values">
+      <object>objects\obj_values</object>
+      <object>objects\obj_guess</object>
+    </objects>
     <object>objects\obj_menu</object>
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
     <object>objects\obj_organotile</object>
+    <object>objects\obj_coffeecup</object>
+    <object>objects\obj_energymeter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_pccrash</room>
@@ -91,6 +100,7 @@
     <room>rooms\rom_cofferun</room>
     <room>rooms\menu_main</room>
     <room>rooms\rom_game</room>
+    <room>rooms\rom_values</room>
     <room>rooms\rom_organogram</room>
     <rooms name="Legacy">
       <room>rooms\rom_coffeerun</room>
