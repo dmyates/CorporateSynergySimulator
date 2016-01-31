@@ -82,11 +82,11 @@
       <object>objects\obj_coffee_coffee</object>
       <object>objects\obj_coffee_border</object>
     </objects>
-    <object>objects\cntrl_organogram</object>
     <objects name="Values">
-      <object>objects\obj_values</object>
+      <object>objects\cntrl_values</object>
       <object>objects\obj_guess</object>
     </objects>
+    <object>objects\cntrl_organogram</object>
     <object>objects\obj_menu</object>
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
@@ -95,17 +95,20 @@
     <object>objects\obj_energymeter</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_values</room>
     <room>rooms\rom_pccrash</room>
     <room>rooms\rom_techsupport</room>
     <room>rooms\rom_cofferun</room>
     <room>rooms\menu_main</room>
     <room>rooms\rom_game</room>
-    <room>rooms\rom_values</room>
     <room>rooms\rom_organogram</room>
     <rooms name="Legacy">
       <room>rooms\rom_coffeerun</room>
     </rooms>
   </rooms>
+  <constants number="1">
+    <constant name="c_officeheading">make_colour_rgb(54,95,145)</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

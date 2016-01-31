@@ -58,7 +58,7 @@ else if (mouse_y &gt; room_height * 0.5) and (mouse_y &lt; room_height * 0.6)
 draw_set_colour(c_white)
 draw_rectangle(room_width/5, room_height/8, room_width * 4/5, room_height, false)
 
-draw_set_colour(make_colour_rgb(54,95,145))
+draw_set_colour(c_officeheading)
 draw_set_font(fnt_title)
 draw_set_valign(fa_middle)
 draw_set_halign(fa_center)
@@ -66,11 +66,8 @@ draw_text_ext(room_width/2,room_height/4, "Corporate Synergy Simulator", -1, roo
 
 draw_set_colour(c_black)
 draw_set_font(fnt_body)
-draw_text(room_width/3.5,room_height * 0.35, "* Play")
-draw_text(room_width/3.5,room_height * 0.55, "* Exit")
-
-draw_rectangle(room_width/4.2, room_height * 0.3, room_width * 0.65, room_height * 0.4, true)
-draw_rectangle(room_width/4.2, room_height * 0.5, room_width * 0.65, room_height * 0.6, true)
+draw_text(room_width/3.5,room_height * 0.35, "Play")
+draw_text(room_width/3.5,room_height * 0.55, "Exit")
 </string>
           </argument>
         </arguments>
