@@ -6,7 +6,9 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_dial</sound>
+    <sound>sound\snd_shit</sound>
     <sound>sound\snd_dialtone</sound>
+    <sound>sound\snd_manic</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Coffee">
@@ -110,12 +112,12 @@
     <object>objects\cntrl_appraisal</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rom_cofferun</room>
-    <room>rooms\rom_gamehub</room>
     <room>rooms\menu_main</room>
     <room>rooms\rom_pccrash</room>
-    <room>rooms\rom_values</room>
     <room>rooms\rom_techsupport</room>
+    <room>rooms\rom_cofferun</room>
+    <room>rooms\rom_gamehub</room>
+    <room>rooms\rom_values</room>
     <room>rooms\rom_organogram</room>
     <rooms name="Legacy">
       <room>rooms\rom_coffeerun</room>

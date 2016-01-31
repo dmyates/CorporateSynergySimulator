@@ -32,6 +32,7 @@ alarm[2] = room_speed*3
 alarm[3] = room_speed*4
 alarm[4] = room_speed*5
 alarm[5] = room_speed*6
+alarm[6] = room_speed*6
 bios1 = 0;
 bios2 = 0;
 bios3 = 0;
@@ -39,6 +40,31 @@ bios4 = 0;
 bios5 = 0;
 boot_fail = 0;
 post_done = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Call Tech Support
+room_goto(rom_techsupport);
 
 </string>
           </argument>
@@ -88,10 +114,35 @@ post_done = 1;
             <kind>1</kind>
             <string>///Draw Text
 bios5 = 1;
-boot_fail = irandom_range(1,2);
+boot_fail = irandom_range(1,1);
+
 
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>snd_shit</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>

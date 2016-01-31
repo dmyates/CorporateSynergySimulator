@@ -163,6 +163,28 @@ else
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>212</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>snd_dialtone</sound>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -187,7 +209,7 @@ draw_set_font(fnt_handwrite)
 draw_set_halign(fa_center)
 draw_text(room_width/2 + 4, (room_height/2) - 224, "Tech support: " + ts_number)
 draw_set_font(fnt_body)
-draw_text(room_width/2, room_height * 0.7, attempt)
+//draw_text(room_width/2, room_height * 0.7, attempt)
 
 draw_set_font(fnt_title)
 if state == 2

@@ -30,7 +30,7 @@
 max_energy = 100
 energy = max_energy
 
-max_time = 10
+max_time = 60*5
 time = max_time
 
 minigames = ds_list_create()
