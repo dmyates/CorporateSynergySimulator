@@ -32,8 +32,36 @@ vmovespeed = 0;
 movespeed = 5;
 left = 0;
 right = 0;
+move = true;
+image_index = 0;
+image_speed = 0;
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Able to Move
+move = true;
+image_index = 0;
 </string>
           </argument>
         </arguments>
@@ -62,11 +90,11 @@ right = keyboard_check(vk_right);
 
 hmove = left + right
 
-if hmove &lt; 0 and x &gt;= 128 
+if hmove &lt; 0 and x &gt;= 128 and move = true
     {
     x -= movespeed;
     }
-if hmove &gt; 0 and x &lt;= 1664
+if hmove &gt; 0 and x &lt;= 1664 and move = true
     {
     x += movespeed;
     }
@@ -78,7 +106,7 @@ if hmove &gt; 0 and x &lt;= 1664
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_coffee_runner">
+    <event eventtype="4" ename="obj_coffee_coffee">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -104,6 +132,36 @@ with obj_coffee_coffee
      instance_destroy()
      
 room_goto(rom_gamehub)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_coffee_office_hazard">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Unable to Move and Destroy
+with other
+    {
+    instance_destroy();
+    }
+move = false;
+image_index = 1;
+alarm[0] = room_speed*1;
 </string>
           </argument>
         </arguments>

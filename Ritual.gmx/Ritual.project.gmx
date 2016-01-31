@@ -106,23 +106,26 @@
     <object>objects\obj_coffeecup</object>
     <object>objects\obj_energymeter</object>
     <object>objects\cntrl_fired</object>
+    <object>objects\obj_placeholder</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_cofferun</room>
+    <room>rooms\rom_gamehub</room>
     <room>rooms\menu_main</room>
     <room>rooms\rom_pccrash</room>
-    <room>rooms\rom_game</room>
     <room>rooms\rom_values</room>
     <room>rooms\rom_techsupport</room>
-    <room>rooms\rom_cofferun</room>
     <room>rooms\rom_organogram</room>
     <rooms name="Legacy">
       <room>rooms\rom_coffeerun</room>
     </rooms>
-    <room>rooms\rom_gamehub</room>
     <room>rooms\rom_fired</room>
   </rooms>
-  <constants number="1">
+  <constants number="4">
     <constant name="c_officeheading">make_colour_rgb(54,95,145)</constant>
+    <constant name="c_energy_high">make_colour_rgb(155,187,89)</constant>
+    <constant name="c_energy_low">make_colour_rgb(79,98,40)</constant>
+    <constant name="c_coffee">make_colour_rgb(74,69,42)</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

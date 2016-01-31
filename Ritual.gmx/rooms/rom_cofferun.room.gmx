@@ -90,7 +90,8 @@
     <instance objName="obj_coffee_border" x="64" y="832" name="inst_7EDC5AFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coffee_border" x="64" y="896" name="inst_3F0D30FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coffee_border" x="64" y="960" name="inst_AEA164AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_coffee_barrier" x="128" y="0" name="inst_DACC65A5" locked="0" code="" scaleX="53.677417755127" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_coffee_barrier" x="128" y="0" name="inst_DACC65A5" locked="0" code="" scaleX="52" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_coffee_border" x="1792" y="64" name="inst_895F3BCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

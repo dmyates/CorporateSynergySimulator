@@ -119,7 +119,7 @@ if (obj_coffeecup.coffee &lt;= 0) and (room != rom_cofferun)
 
 draw_self()
 
-draw_healthbar(x-(sprite_width/4), y-(sprite_height/4), x+(sprite_width/4), y+(sprite_height/3), (coffee/max_coffee)*100, c_black, c_green, c_green, 3, true, true)
+draw_healthbar(x-64, y-(sprite_height/4),x, y+(sprite_height/3), (coffee/max_coffee)*100, c_black,c_coffee,c_coffee, 3,false,false)
 </string>
           </argument>
         </arguments>

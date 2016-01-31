@@ -214,7 +214,7 @@ if (room == rom_gamehub)
             <kind>1</kind>
             <string>///Draw energy meter
 
-draw_healthbar(room_width * 0.85, room_height * 0.2, room_width * 0.9, room_height * 0.8, (energy/max_energy)*100, c_black, c_red, c_green, 3, true, true)
+draw_healthbar(room_width * 0.915, room_height * 0.05, room_width * 0.94, room_height * 0.45, (energy/max_energy)*100, c_black,c_energy_low,c_energy_high, 3,false,false)
 </string>
           </argument>
         </arguments>
