@@ -35,8 +35,11 @@
       <sprite>sprites\spr_pc_close</sprite>
       <sprite>sprites\spr_somethinghappened</sprite>
       <sprite>sprites\spr_pccrash_desktop</sprite>
+      <sprite>sprites\spr_pccrash_restart</sprite>
+      <sprite>sprites\spr_pccrash_blank</sprite>
       <sprite>sprites\spr_pccrash_startmenu</sprite>
       <sprite>sprites\spr_pccrash_startbutton</sprite>
+      <sprite>sprites\spr_pccrash_oslogo</sprite>
       <sprite>sprites\spr_pccrash_reboot</sprite>
     </sprites>
     <sprite>sprites\spr_coffeecup</sprite>
@@ -56,6 +59,7 @@
     <font>fonts\font3</font>
     <font>fonts\fnt_handwrite</font>
     <font>fonts\fnt_pccrash</font>
+    <font>fonts\fnt_bios</font>
   </fonts>
   <objects name="objects">
     <objects name="PC Crash">
@@ -65,7 +69,15 @@
       <object>objects\obj_pccrash_desktop</object>
       <object>objects\obj_pccrash_startmenu</object>
       <object>objects\obj_pccrash_startbutton</object>
+      <object>objects\obj_pccrash_start_dead</object>
       <object>objects\obj_pccrash_reboot</object>
+      <object>objects\obj_pccrash_restart</object>
+      <object>objects\obj_pccrash_osload</object>
+      <object>objects\obj_pccrash_restarting</object>
+      <object>objects\obj_pccrash_blank</object>
+      <object>objects\obj_pccrash_post_text</object>
+      <object>objects\obj_pccrash_osboot</object>
+      <object>objects\obj_pccrash_oslogo</object>
     </objects>
     <objects name="TechSupport">
       <object>objects\obj_phonebutton</object>
@@ -95,12 +107,12 @@
     <object>objects\obj_energymeter</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rom_values</room>
     <room>rooms\rom_pccrash</room>
+    <room>rooms\rom_game</room>
+    <room>rooms\rom_values</room>
     <room>rooms\rom_techsupport</room>
     <room>rooms\rom_cofferun</room>
     <room>rooms\menu_main</room>
-    <room>rooms\rom_game</room>
     <room>rooms\rom_organogram</room>
     <rooms name="Legacy">
       <room>rooms\rom_coffeerun</room>
