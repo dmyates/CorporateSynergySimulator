@@ -53,6 +53,8 @@
     <script>scripts\organogram_score.gml</script>
     <script>scripts\values_createguesses.gml</script>
     <script>scripts\bvi_set_colour.gml</script>
+    <script>scripts\_contains.gml</script>
+    <script>scripts\return_self.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>

@@ -51,10 +51,9 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_organotile" x="256" y="128" name="inst_9A64E442" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_organotile" x="736" y="640" name="inst_55C4A930" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_organotile" x="608" y="320" name="inst_B3E6E0FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_organotile" x="288" y="480" name="inst_639F1414" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_organotile" x="864" y="544" name="inst_9A64E442" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_organotile" x="736" y="288" name="inst_B3E6E0FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_organotile" x="352" y="512" name="inst_639F1414" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cntrl_organogram" x="0" y="0" name="inst_59C03F53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_slide_title" x="0" y="32" name="inst_6B111C2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_slide_template" x="0" y="64" name="inst_E2CE1351" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

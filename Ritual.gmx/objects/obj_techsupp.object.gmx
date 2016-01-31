@@ -3,7 +3,7 @@
   <spriteName>spr_phonebutton</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -36,7 +36,7 @@ var sx, fx, cx, sy, fy, cy;
 sx = room_width/2 - 96
 fx = sx + sprite_width*4.5
 
-sy = (2*room_height)/3
+sy = (2*room_height)/3.2
 fy = sy + sprite_height*4.5
 
 ///Main body
@@ -51,6 +51,14 @@ for (cx = sx; cx &lt; fx; cx += sprite_width*1.5)
     }    
     cy = sy
 }
+
+//10th number
+cx = fx - sprite_width * 3
+cy = fy - sprite_width/3.8
+with (instance_create(cx, cy, obj_phonebutton))
+     number = string(other.numbers[| 0])
+     
+ds_list_destroy(numbers)
 </string>
           </argument>
         </arguments>
