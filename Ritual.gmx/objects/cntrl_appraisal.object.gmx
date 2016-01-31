@@ -8,6 +8,63 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set vars
+
+indicator = "Synergistic"
+job_status = " become CEO of the company!"
+
+if (score &lt; 20)
+{
+   indicator = "Excellent"
+   job_status = " get a promotion!"
+}
+if (score &lt; 15)
+{
+   indicator = "Exemplary"
+   job_status = " get a raise!"
+}
+if (score &lt; 12)
+{
+     indicator = "Satisfactory"
+     job_status = " come to work again tomorrow."
+}
+if (score &lt; 10)
+{
+     indicator = "Acceptable"
+     job_status = " lose your parking bay."
+}
+if (score &lt; 7)
+{
+     indicator = "Subpar"
+     job_status = " get demoted to janitor."
+}
+if (score &lt; 4)
+{
+     indicator = "Detrimental"
+     job_status = " come to work tomorrow, only to find your access card has been deactivated"
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -25,14 +82,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw fired text
+            <string>///Draw performance indicators
 
-draw_set_font(fnt_title)
+draw_set_font(fnt_body)
 draw_set_colour(c_black)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
-draw_text(room_width/2, room_height/2, "Press Enter to sell your house.") ///random funny lines here
+draw_text(room_width/2, room_height/3, "Your Business Value Indicator (BVI):#" + string(score))
+
+bvi_set_colour()
+draw_text(room_width/2, room_height/2, "This performance is " + indicator + "##Press Enter to come to " + job_status)
 </string>
           </argument>
         </arguments>
@@ -55,9 +115,9 @@ draw_text(room_width/2, room_height/2, "Press Enter to sell your house.") ///ran
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Restart the game
+            <string>///Go back to gamehub and start again
 
-game_restart()
+room_goto(rom_gamehub)
 </string>
           </argument>
         </arguments>

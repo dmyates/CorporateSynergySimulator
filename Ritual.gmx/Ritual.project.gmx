@@ -50,6 +50,7 @@
   <scripts name="scripts">
     <script>scripts\organogram_score.gml</script>
     <script>scripts\values_createguesses.gml</script>
+    <script>scripts\bvi_set_colour.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
@@ -106,8 +107,7 @@
     <object>objects\obj_coffeecup</object>
     <object>objects\obj_energymeter</object>
     <object>objects\cntrl_fired</object>
-    <object>objects\obj_placeholder</object>
-  </objects>
+    <object>objects\cntrl_appraisal</object>
   <rooms name="rooms">
     <room>rooms\rom_cofferun</room>
     <room>rooms\rom_gamehub</room>
@@ -120,6 +120,7 @@
       <room>rooms\rom_coffeerun</room>
     </rooms>
     <room>rooms\rom_fired</room>
+    <room>rooms\rom_appraisal</room>
   </rooms>
   <constants number="4">
     <constant name="c_officeheading">make_colour_rgb(54,95,145)</constant>

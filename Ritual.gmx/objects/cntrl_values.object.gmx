@@ -180,6 +180,8 @@ else
 
 state = 2
 
+score += correct
+
 alarm[1] = 5*room_speed
 </string>
           </argument>
