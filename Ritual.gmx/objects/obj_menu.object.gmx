@@ -28,7 +28,7 @@
             <string>///Click menu buttons
 
 if (mouse_y &gt; room_height * 0.3) and (mouse_y &lt; room_height * 0.4)
-    room_goto(rom_game)
+    room_goto(rom_gamehub)
 else if (mouse_y &gt; room_height * 0.5) and (mouse_y &lt; room_height * 0.6)
     game_end()
 </string>
@@ -68,6 +68,11 @@ draw_set_colour(c_black)
 draw_set_font(fnt_body)
 draw_text(room_width/3.5,room_height * 0.35, "Play")
 draw_text(room_width/3.5,room_height * 0.55, "Exit")
+
+if (mouse_y &gt; room_height * 0.3) and (mouse_y &lt; room_height * 0.4)
+    draw_rectangle(room_width/4.2, room_height * 0.3, room_width * 0.65, room_height * 0.4, true)
+else if (mouse_y &gt; room_height * 0.5) and (mouse_y &lt; room_height * 0.6)
+     draw_rectangle(room_width/4.2, room_height * 0.5, room_width * 0.65, room_height * 0.6, true)
 </string>
           </argument>
         </arguments>
