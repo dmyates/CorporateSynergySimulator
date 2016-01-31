@@ -29,51 +29,44 @@
 
 globalvar organo_selected, organo_words;
 
-organo_words = ds_list_create()
-
-ds_list_add(organo_words, "Junior"
-                        , "Associate"
-                        , "Senior"
-                        , "Lead"
-                        , "Managing"
-                        , "Executive"
-                        , "Vice"
-                        , "Acting"
-                        , "Marketing"
-                        , "Information"
-                        , "Finance"
-                        , "Human Resources"
-                        , "Strategy"
-                        , "Account"
-                        , "Analyst")
-                        
-ds_list_add(organo_words, "Manager"
-                        , "Administrator"
-                        , "Consultant"
-                        , "Engineer"
-                        , "Director"
-                        , "Representative")
-
-
 organo_selected = noone
 
-ow_selection = ds_list_create()
+organo_words[0] = ds_list_create()
+ds_list_add(organo_words[0],"Junior", "Associate", "Senior", "Lead")
+organo_words[1] = ds_list_create()
+ds_list_add(organo_words[1], "Managing", "Executive", "Vice", "Acting")
+organo_words[2] = ds_list_create()
+ds_list_add(organo_words[2], "Marketing", "Information", "Finance", "Human Resources", "Strategy", "Account")
+organo_words[3] = ds_list_create()
+ds_list_add(organo_words[3], "Analyst", "Manager", "Administrator", "Consultant", "Engineer", "Director", "Representative")
 
-ds_list_copy(ow_selection, organo_words)
+ow_selection = ds_list_create()
+ds_list_copy(ow_selection, organo_words[choose(0,1,2,3)])
 
 for (i = 0; i &lt; 3; i++)
 {
-    rule[i] = ow_selection[| irandom(ds_list_size(ow_selection))]
-    ds_list_delete(ow_selection, ds_list_find_index(ow_selection, rule[i])) //ensure no dups
+    ds_list_shuffle(ow_selection)
+    rule[i] = ow_selection[| 0]
+    ds_list_delete(ow_selection, 0) //ensure no dups
 }
     
 ds_list_destroy(ow_selection)
-ds_list_destroy(organo_words)
+ds_list_destroy(organo_words[0])
+ds_list_destroy(organo_words[1])
+ds_list_destroy(organo_words[2])
+ds_list_destroy(organo_words[3])
     
 // Local
-rules = ""+rule[0]+" is below "+rule[1] + "#"+rule[1]+" is below "+rule[2]
+rules = ""+rule[2]+" is below "+rule[1] + "#"+rule[1]+" is below "+rule[0]
 
 order_str = ""
+
+state = 0 //0 - playing, 1 - won, 2 - lost
+state_text[0] = "playing!"
+state_text[1] = "right!"
+state_text[2] = "wrong!"
+
+
 </string>
           </argument>
         </arguments>
@@ -103,6 +96,31 @@ alarm[0] = room_speed*5
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Leave
+
+room_goto(rom_gamehub)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -122,7 +140,11 @@ alarm[0] = room_speed*5
             <kind>1</kind>
             <string>/// Figure out the player's score
 
-order = organogram_score()
+organogram_score()
+
+score += 2
+
+alarm[2] = room_speed*5
 </string>
           </argument>
         </arguments>
@@ -185,7 +207,7 @@ with (organo_selected)
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -204,13 +226,15 @@ with (organo_selected)
             <kind>1</kind>
             <string>///Display rules at the beginning and results at the end
 
+draw_set_font(fnt_body)
+draw_set_colour(c_black)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
 if (alarm[0] &gt; -1)
     draw_text_ext(room_width/2, room_height/3, rules, -1, room_width * 0.6)
 else if (alarm[1] == -1)
-     draw_text_ext(room_width/2, room_height/3, order, -1, room_width * 0.6)
+    draw_text_ext(room_width/2, room_height/3, order_str+"##You got it "+state_text[state], -1, room_width * 0.6)
 </string>
           </argument>
         </arguments>
