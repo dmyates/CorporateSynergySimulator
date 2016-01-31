@@ -108,6 +108,7 @@
     <object>objects\obj_energymeter</object>
     <object>objects\cntrl_fired</object>
     <object>objects\cntrl_appraisal</object>
+  </objects>
   <rooms name="rooms">
     <room>rooms\rom_cofferun</room>
     <room>rooms\rom_gamehub</room>
