@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Set vars
 
-max_energy = 100
+max_energy = 1000
 energy = max_energy
 
 max_time = 60*5
@@ -36,7 +36,8 @@ time = max_time
 minigames = ds_list_create()
 
 ds_list_add(minigames, rom_values
-                     , rom_pccrash)
+                     , rom_pccrash
+                     , rom_organogram)
                      
 score = 0
 </string>
@@ -117,7 +118,7 @@ else if (energy &lt;= 0)
             <kind>1</kind>
             <string>///Go to the minigame at the top of the list
 
-//ds_list_shuffle(minigames)
+ds_list_shuffle(minigames)
 room_goto(minigames[| 0])
 
 </string>

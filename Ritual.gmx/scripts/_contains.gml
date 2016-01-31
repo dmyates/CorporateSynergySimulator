@@ -760,4 +760,3 @@ if (_typeOf(argument0) == "array") {
     return ds_list_size(argument0);
 }
 
-
