@@ -29,6 +29,92 @@
 
 max_energy = 50
 energy = max_energy
+
+max_time = 60
+time = max_time
+
+minigames = ds_list_create()
+
+ds_list_add(minigames, rom_values
+                     , rom_pccrash)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Free memory from list
+
+ds_list_destroy(minigames)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Lose game
+
+with obj_coffeecup
+     instance_destroy()
+     
+room_goto(rom_fired)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to the minigame at the top of the list
+
+//ds_list_shuffle(minigames)
+room_goto(minigames[| 0])
+
 </string>
           </argument>
         </arguments>
@@ -74,9 +160,36 @@ energy -= 0.1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Go get more coffee if we run out
+            <string>///Get fired if we run out of energy
 
-room_goto(rom_cofferun)
+if (energy &lt;= 0)
+   instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to a minigame if we're in the hub
+
+if (room == rom_gamehub)
+   alarm[0] = 3*room_speed
 </string>
           </argument>
         </arguments>
@@ -102,6 +215,34 @@ room_goto(rom_cofferun)
             <string>///Draw energy meter
 
 draw_healthbar(room_width * 0.85, room_height * 0.2, room_width * 0.9, room_height * 0.8, (energy/max_energy)*100, c_black, c_red, c_green, 3, true, true)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw minigame counter
+
+if (alarm[0] &gt; -1)
+{
+   draw_set_font(fnt_title)
+   draw_set_colour(c_red)
+   draw_text(room_width/2, room_height/2, "Office ritual in:#"+ string(round(alarm[0]/room_speed)))
+}
 </string>
           </argument>
         </arguments>

@@ -25,17 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Slide Title
+            <string>///Draw slide title
 
-//Draw the Box Around the Slide Title
+//Draw box around slide title
 draw_set_color(c_white);
 draw_rectangle(128,64,1792,206,false)
 
-//Slide Title
+//Slide title
 draw_set_color(c_black);
 draw_set_font(fnt_slide_title);
 draw_set_halign(fa_center);
-draw_text_ext(room_width/2,128,"Avoid Office Hazards! Get Coffee!!!",64,896);
+draw_text_ext(room_width/2,128,room_title,64,896);
 
 
 </string>
