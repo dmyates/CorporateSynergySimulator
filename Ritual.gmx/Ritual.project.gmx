@@ -32,7 +32,6 @@
       <sprite>sprites\spr_tech_handset</sprite>
       <sprite>sprites\spr_sticky</sprite>
     </sprites>
-    <sprite>sprites\spr_organotile</sprite>
     <sprites name="PC Crash">
       <sprite>sprites\spr_pc_close</sprite>
       <sprite>sprites\spr_somethinghappened</sprite>
@@ -46,6 +45,7 @@
     </sprites>
     <sprite>sprites\spr_coffeecup</sprite>
     <sprite>sprites\spr_guess</sprite>
+    <sprite>sprites\spr_organotile</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -60,13 +60,23 @@
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_body</font>
     <font>fonts\fnt_slide_title</font>
-    <font>fonts\font2</font>
-    <font>fonts\font3</font>
     <font>fonts\fnt_handwrite</font>
     <font>fonts\fnt_pccrash</font>
     <font>fonts\fnt_bios</font>
   </fonts>
   <objects name="objects">
+    <objects name="Coffee">
+      <object>objects\obj_coffee_hazard_spawn</object>
+      <object>objects\obj_coffee_runner</object>
+      <object>objects\obj_coffee_office_hazard</object>
+      <object>objects\obj_coffee_barrier</object>
+      <object>objects\obj_coffee_coffee</object>
+      <object>objects\obj_coffee_border</object>
+    </objects>
+    <objects name="Organogram">
+      <object>objects\cntrl_organogram</object>
+      <object>objects\obj_organotile</object>
+    </objects>
     <objects name="PC Crash">
       <object>objects\obj_pccrash_somethinghappened</object>
       <object>objects\obj_pccrash_error</object>
@@ -91,23 +101,13 @@
       <object>objects\obj_tech_handset</object>
       <object>objects\obj_sticky</object>
     </objects>
-    <objects name="Coffee">
-      <object>objects\obj_coffee_hazard_spawn</object>
-      <object>objects\obj_coffee_runner</object>
-      <object>objects\obj_coffee_office_hazard</object>
-      <object>objects\obj_coffee_barrier</object>
-      <object>objects\obj_coffee_coffee</object>
-      <object>objects\obj_coffee_border</object>
-    </objects>
     <objects name="Values">
       <object>objects\cntrl_values</object>
       <object>objects\obj_guess</object>
     </objects>
-    <object>objects\cntrl_organogram</object>
     <object>objects\obj_menu</object>
     <object>objects\obj_slide_template</object>
     <object>objects\obj_slide_title</object>
-    <object>objects\obj_organotile</object>
     <object>objects\obj_coffeecup</object>
     <object>objects\obj_energymeter</object>
     <object>objects\cntrl_fired</object>
@@ -121,9 +121,6 @@
     <room>rooms\rom_gamehub</room>
     <room>rooms\rom_values</room>
     <room>rooms\rom_organogram</room>
-    <rooms name="Legacy">
-      <room>rooms\rom_coffeerun</room>
-    </rooms>
     <room>rooms\rom_fired</room>
     <room>rooms\rom_appraisal</room>
   </rooms>

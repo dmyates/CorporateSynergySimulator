@@ -759,4 +759,3 @@ if (_typeOf(argument0) == "array") {
 } else if (_typeOf(argument0) == "real" && ds_exists(argument0, ds_type_list)) {
     return ds_list_size(argument0);
 }
-
