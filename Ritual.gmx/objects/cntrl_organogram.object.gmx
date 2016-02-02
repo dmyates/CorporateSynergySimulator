@@ -25,14 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set up some vars
-
-globalvar organo_selected, organo_words;
+            <string>///Create words and rules
 
 organo_selected = noone
 
 organo_words[0] = ds_list_create()
-ds_list_add(organo_words[0],"Junior", "Associate", "Senior", "Lead")
+ds_list_add(organo_words[0], "Junior", "Associate", "Senior", "Lead")
 organo_words[1] = ds_list_create()
 ds_list_add(organo_words[1], "Managing", "Executive", "Vice", "Acting")
 organo_words[2] = ds_list_create()
@@ -40,8 +38,10 @@ ds_list_add(organo_words[2], "Marketing", "Information", "Finance", "Human Resou
 organo_words[3] = ds_list_create()
 ds_list_add(organo_words[3], "Analyst", "Manager", "Administrator", "Consultant", "Engineer", "Director", "Representative")
 
+rulenum = choose(0,1,2,3)
+
 ow_selection = ds_list_create()
-ds_list_copy(ow_selection, organo_words[choose(0,1,2,3)])
+ds_list_copy(ow_selection, organo_words[rulenum])
 
 for (i = 0; i &lt; 3; i++)
 {
@@ -49,22 +49,14 @@ for (i = 0; i &lt; 3; i++)
     rule[i] = ow_selection[| 0]
     ds_list_delete(ow_selection, 0) //ensure no dups
 }
-    
+
+//Destroy unnecessary list    
 ds_list_destroy(ow_selection)
-ds_list_destroy(organo_words[0])
-ds_list_destroy(organo_words[1])
-ds_list_destroy(organo_words[2])
-ds_list_destroy(organo_words[3])
-    
-// Local
+
+//Rules description
 rules = ""+rule[2]+" is below "+rule[1] + "#"+rule[1]+" is below "+rule[0]
 
-order_str = ""
 
-state = 0 //0 - playing, 1 - won, 2 - lost
-state_text[0] = "playing!"
-state_text[1] = "right!"
-state_text[2] = "wrong!"
 
 
 </string>
@@ -87,7 +79,14 @@ state_text[2] = "wrong!"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set rules alarm
+            <string>///Set rules alarm and misc vars
+
+order_str = ""
+
+state = 0 //0 - playing, 1 - won, 2 - lost
+state_text[0] = "playing!"
+state_text[1] = "right!"
+state_text[2] = "wrong!"
 
 alarm[0] = room_speed*5
 
@@ -167,6 +166,54 @@ alarm[2] = room_speed*5
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Create organotiles
+
+for (n = 0; n &lt; _length(rules); n += 1)
+{
+    with (instance_create(room_width/2, room_height/2, obj_organotile))
+    {
+        do
+        {
+            x = room_width*0.2 + irandom(room_width*0.6)
+            y = room_height*0.2 + irandom(room_height*0.6)
+        } until (place_free(x, y))
+        
+        var i, lst;
+        
+        label = ""
+        
+        for (i = 0; i &lt; _length(other.organo_words); i += 1)
+        {
+            lst = other.organo_words[i]
+            if (i == rulenum)
+               label += rules[other.n] + " "
+            else
+               label +=  lst[| irandom(_length(lst))-1] + " "
+        }
+        
+        label = string_delete(label, string_length(label), 1) //remove trailing space
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Go off and set gameplay alarm
 
 alarm[1] = room_speed*10
@@ -202,6 +249,34 @@ with (organo_selected)
     x = mouse_x
     y = mouse_y
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy remaining lists
+
+var i;
+
+for (i = 0; i &lt; _length(organo_words); i += 1)
+    _free(organo_words[i], ds_type_list)
 </string>
           </argument>
         </arguments>

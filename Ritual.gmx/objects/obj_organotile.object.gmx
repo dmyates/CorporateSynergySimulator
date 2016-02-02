@@ -8,34 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Set label &amp; such
-
-label = choose("Junior", "Associate", "Senior", "Lead") + " "
-      + choose("Managing", "Executive", "Vice", "Acting") + " "
-      + choose("Marketing", "Information", "Finance", "Human Resources", "Strategy", "Account") + " "
-      + choose("Analyst", "Manager", "Administrator", "Consultant", "Engineer", "Director", "Representative")
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
@@ -55,7 +27,7 @@ label = choose("Junior", "Associate", "Senior", "Lead") + " "
             <kind>1</kind>
             <string>// Unset organo selected
 
-global.organo_selected = noone
+cntrl_organogram.organo_selected = noone
 </string>
           </argument>
         </arguments>
@@ -80,7 +52,7 @@ global.organo_selected = noone
             <kind>1</kind>
             <string>///Make me the selected one
 
-global.organo_selected = id
+cntrl_organogram.organo_selected = id
 </string>
           </argument>
         </arguments>
@@ -104,9 +76,6 @@ global.organo_selected = id
           <argument>
             <kind>1</kind>
             <string>///Draw my sprite and label
-
-if cntrl_organogram.alarm[1] == -1
-    exit
     
 draw_self()
 
